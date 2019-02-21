@@ -1,0 +1,54 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/security?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: root
+  session:
+    store-type: redis
+my:
+  security:
+    browser:
+#      signInPage: /my-signIn.html
+      signInSufFix: .html
+      signInResponseType: JSON
+#    code:
+#      image:
+#        length: 6
+#        url: /user,/user/*
+      session:
+        maxSessionsPreventsLogin: true
+    social:
+      qq:
+        appId: 100550231
+        appSecret: 69b6ab57b22f3c2fe6a6149274e3295e
+        providerId: callback.do
+      weChat:
+        appId: wxd99431bbff8305a0
+        appSecret: 60f78681d063590a469f1b297feff3c4
+        providerId: weixin
+      signUpUrl: /my-signUp.html
+      processesUrl: /qqLogin
+    oauth2:
+      client[0]:
+        clientId: zb
+        secret: zb
+        accessTokenValiditySeconds: 3600
+      client[1]:
+        clientId: dd
+        secret: dd
+
+server:
+  port: 8080
+security:
+  oauth2:
+    client:
+      client-id: zb
+      client-secret: zb
+      registered-redirect-uri: http://www.baidu.com
+
+
+
+
+
+
